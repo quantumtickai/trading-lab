@@ -1,0 +1,31 @@
+diff --git a/research/preview_data.ipynb b/research/preview_data.ipynb
+index a43005e..a39a30f 100644
+--- a/research/preview_data.ipynb
++++ b/research/preview_data.ipynb
+@@ -110,7 +110,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 38,
++   "execution_count": null,
+    "id": "86e308d9",
+    "metadata": {},
+    "outputs": [
+@@ -123,6 +123,17 @@
+      },
+      "metadata": {},
+      "output_type": "display_data"
++    },
++    {
++     "ename": "",
++     "evalue": "",
++     "output_type": "error",
++     "traceback": [
++      "\u001b[1;31mThe Kernel crashed while executing code in the current cell or a previous cell. \n",
++      "\u001b[1;31mPlease review the code in the cell(s) to identify a possible cause of the failure. \n",
++      "\u001b[1;31mClick <a href='https://aka.ms/vscodeJupyterKernelCrash'>here</a> for more info. \n",
++      "\u001b[1;31mView Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details."
++     ]
+     }
+    ],
+    "source": [

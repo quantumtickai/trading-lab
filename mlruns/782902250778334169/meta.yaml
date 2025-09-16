@@ -1,0 +1,6 @@
+artifact_location: file:X:\QuantumTickAI\trading-lab\mlruns/782902250778334169
+creation_time: 1757989959556
+experiment_id: '782902250778334169'
+last_update_time: 1757989959556
+lifecycle_stage: active
+name: backtest_analysis_us_alpha158_lgbm

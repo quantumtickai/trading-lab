@@ -1,0 +1,6 @@
+artifact_location: file:X:\QuantumTickAI\trading-lab\research\mlruns/778241453529084989
+creation_time: 1757990810429
+experiment_id: '778241453529084989'
+last_update_time: 1757990810429
+lifecycle_stage: active
+name: train_model_us_alpha158_lgbm

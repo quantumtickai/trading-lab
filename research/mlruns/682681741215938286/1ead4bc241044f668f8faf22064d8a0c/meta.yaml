@@ -1,0 +1,14 @@
+artifact_uri: file:X:\QuantumTickAI\trading-lab\research\mlruns/682681741215938286/1ead4bc241044f668f8faf22064d8a0c/artifacts
+end_time: 1757991442935
+entry_point_name: ''
+experiment_id: '682681741215938286'
+lifecycle_stage: active
+run_id: 1ead4bc241044f668f8faf22064d8a0c
+run_name: mlflow_recorder
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757991383029
+status: 3
+tags: []
+user_id: aadit
