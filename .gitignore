@@ -213,3 +213,5 @@ data/raw/*
 # Ignore extracted QLib datasets
 **/us_data/**
 app/*
+research/mlruns/*
+mlruns/*
