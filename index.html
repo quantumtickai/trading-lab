@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Awesome is Brewing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 30%, #0f0f23 70%, #000000 100%);
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            z-index: 2;
+        }
+
+        .black-hole {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin-bottom: 4rem;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .black-hole-core {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #1a1a2e 0%, #000000 70%);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 
+                0 0 50px rgba(138, 43, 226, 0.8),
+                0 0 100px rgba(75, 0, 130, 0.6),
+                0 0 150px rgba(138, 43, 226, 0.4),
+                inset 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .event-horizon {
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 50%;
+            position: absolute;
+            animation: rotate 20s linear infinite;
+        }
+
+        .event-horizon::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: rgba(138, 43, 226, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.05);
+                filter: brightness(1.2);
+            }
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .title .letter {
+            display: inline-block;
+            margin: 0 0.2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .title .letter:nth-child(1) { animation-delay: 0s; }
+        .title .letter:nth-child(2) { animation-delay: 0.1s; }
+        .title .letter:nth-child(3) { animation-delay: 0.2s; }
+        .title .letter:nth-child(4) { animation-delay: 0.3s; }
+        .title .letter:nth-child(5) { animation-delay: 0.4s; }
+        .title .letter:nth-child(6) { animation-delay: 0.5s; }
+        .title .letter:nth-child(7) { animation-delay: 0.6s; }
+        .title .letter:nth-child(8) { animation-delay: 0.7s; }
+        .title .letter:nth-child(9) { animation-delay: 0.8s; }
+        .title .letter:nth-child(10) { animation-delay: 0.9s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes glow {
+            from { 
+                text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            }
+            to { 
+                text-shadow: 0 0 30px rgba(138, 43, 226, 0.8), 0 0 40px rgba(75, 0, 130, 0.6);
+            }
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: rgba(138, 43, 226, 0.8);
+            margin-bottom: 3rem;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .gravitational-waves {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            pointer-events: none;
+        }
+
+        .wave {
+            position: absolute;
+            border: 1px solid rgba(138, 43, 226, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: expand 4s ease-out infinite;
+        }
+
+        .wave:nth-child(1) { animation-delay: 0s; }
+        .wave:nth-child(2) { animation-delay: 1s; }
+        .wave:nth-child(3) { animation-delay: 2s; }
+        .wave:nth-child(4) { animation-delay: 3s; }
+
+        @keyframes expand {
+            0% {
+                width: 200px;
+                height: 200px;
+                opacity: 0.8;
+            }
+            100% {
+                width: 600px;
+                height: 600px;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+                letter-spacing: 0.3rem;
+            }
+
+            .black-hole {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 3rem;
+            }
+
+            .black-hole-core {
+                width: 130px;
+                height: 130px;
+            }
+
+            .gravitational-waves {
+                width: 400px;
+                height: 400px;
+            }
+
+            .wave {
+                max-width: 400px;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem;
+                letter-spacing: 0.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 0.2rem;
+            }
+
+            .black-hole {
+                width: 150px;
+                height: 150px;
+            }
+
+            .black-hole-core {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="gravitational-waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div class="container">
+        <div class="black-hole">
+            <div class="black-hole-core"></div>
+            <div class="event-horizon"></div>
+        </div>
+
+        <h1 class="title">
+            <span class="letter">S</span><span class="letter">O</span><span class="letter">M</span><span class="letter">E</span><span class="letter">T</span><span class="letter">H</span><span class="letter">I</span><span class="letter">N</span><span class="letter">G</span>
+            <br>
+            <span class="letter">A</span><span class="letter">W</span><span class="letter">E</span><span class="letter">S</span><span class="letter">O</span><span class="letter">M</span><span class="letter">E</span>
+            <br>
+            <span class="letter">I</span><span class="letter">S</span>
+            <br>
+            <span class="letter">B</span><span class="letter">R</span><span class="letter">E</span><span class="letter">W</span><span class="letter">I</span><span class="letter">N</span><span class="letter">G</span>
+        </h1>
+
+        <p class="subtitle">Quantum Tick AI</p>
+    </div>
+
+    <script>
+        // Create random stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numStars = 100;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                const size = Math.random() * 2 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Mouse interaction with black hole
+        document.addEventListener('mousemove', (e) => {
+            const blackHole = document.querySelector('.black-hole-core');
+            const rect = blackHole.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const deltaX = (e.clientX - centerX) / 50;
+            const deltaY = (e.clientY - centerY) / 50;
+            
+            blackHole.style.transform = `translate(calc(-50% + ${deltaX}px), calc(-50% + ${deltaY}px))`;
+        });
+
+        // Initialize stars when page loads
+        window.addEventListener('load', createStars);
+    </script>
+</body>
+</html>
